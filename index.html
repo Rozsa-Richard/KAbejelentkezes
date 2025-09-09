@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #login {
+            float: left; width: 40%;
+            background-color:aqua;
+        }
+        #singup{
+            float: right; width: 40%;
+            background-color: red;
+        }
+        div {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="login">
+        <h3>Bejelentkezés</h3>
+
+        <form onsubmit="login()">
+            <input type="email">
+            <input type="password">
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    <div id="singup">
+        <h3>Regisztráció</h3>
+        <form onsubmit="singup()">
+
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
