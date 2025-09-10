@@ -23,15 +23,23 @@
         <h3>Bejelentkezés</h3>
 
         <form onsubmit="login()">
-            <input type="email">
-            <input type="password">
+            <label for="lem">Email: </label>
+            <input id="lem" type="email"><br>
+            <label for="lpw">Jelszó: </label>
+            <input id="lpw" type="password"><br>
             <input type="submit" value="Submit">
         </form>
     </div>
     <div id="singup">
         <h3>Regisztráció</h3>
-        <form onsubmit="singup()">
-
+        <form>
+            <label for="sem">Email: </label>
+            <input id="sem" type="email"><br>
+            <label for="spw1">Jelszó: </label>
+            <input id="spw1" type="password"><br>
+            <label for="spw2">Jelszó újra: </label>
+            <input id="spw2" type="password"><br>
+            <input type="submit" value="Submit" onclick="singup()">
         </form>
     </div>
 
