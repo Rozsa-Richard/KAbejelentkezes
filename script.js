@@ -7,18 +7,17 @@ seeLogin();
 async function login() {
     let email = document.getElementById("lem").value;
     let password = document.getElementById("lpw").value;
-    console.log(isEmail(email));
     if(email ==""){
-        alert("Az emailt mezőt nem töltötte ki")
+        alert("Az emailt mezőt nem töltötte ki");
     }
     else if (password==""){
-        alert("A jelszó mezőt nem töltötte ki")
+        alert("A jelszó mezőt nem töltötte ki");
     }
     else if(!isEmail(email)){
         alert("Az email nem jó formátumba adtad meg");
     }
     else {
-        alert("Sikeres bejelentkezés")
+        alert("Sikeres bejelentkezés");
     }
 }
 
@@ -28,7 +27,7 @@ async function singup() {
     let password2 = document.getElementById("spw2").value;
 
     if(email == "" || password1=="" || password2==""){
-        alert("Az emailt vagy a jelszó mezőt nem töltötte ki")
+        alert("Az emailt vagy a jelszó mezőt nem töltötte ki");
     }
     else if(!isEmail(email)){
         alert("Az email nem jó formátumba adtad meg");
@@ -46,26 +45,27 @@ function isEmail(email){
 }
 
 function seeLogin(){
-    loginText.innerHTML =`<h3>Bejelentkezés</h3>
-                <label for="lem">Email: </label>
+    loginPage.innerHTML =`<h3>Bejelentkezés</h3>
+                <p><label for="lem">Email: </label>
                 <input id="lem" type="email"><br>
                 <label for="lpw">Jelszó: </label>
                 <input id="lpw" type="password"><br>
-                <button onclick="login()">Bejelentkezés</button>`;
-    singupText.innerHTML = `Nincs még fiókod? <button onclick="seeSingUp()">Regisztráció</button>`;
-    singupPage.style.backgroundColor ="yellowgreen";
-    loginPage.style.backgroundColor="yellow";
+                <button onclick="login()">Bejelentkezés</button></p>`;
+    singupPage.innerHTML = `<p class="formthing">Jelentkezz be a fiókodba a továbbiakhoz!<br>A fiókodhoz tartozó jelszavat senkinek se add meg! Visszaélhetnek vele.<br><label>Nincs még fiókod?<label/><button onclick="seeSingUp()" class="textbutton">Regisztráció</button></p>`;
+    singupPage.style.backgroundColor ="#217346";
+    loginPage.style.backgroundColor="#D9EAD3";
 }
 function seeSingUp(){
-    singupText.innerHTML = `<h3>Regisztráció</h3>
-                <label for="sem">Email: </label>
+    singupPage.innerHTML = `
+                <h3>Regisztráció</h3><p>
+                <label for="sem">Email:        </label>
                 <input id="sem" type="email"><br>
-                <label for="spw1">Jelszó: </label>
+                <label for="spw1">Jelszó:      </label>
                 <input id="spw1" type="password"><br>
                 <label for="spw2">Jelszó újra: </label>
                 <input id="spw2" type="password"><br>
-                <button onclick="singup()">Regisztráció</button>`;
-    loginText.innerHTML= `Van már fiókod? <button onclick="seeLogin()">Bejelentkezés</button>`;
-    singupPage.style.backgroundColor ="yellow";
-    loginPage.style.backgroundColor="yellowgreen";
+                <button onclick="singup()">Regisztráció</button><p>`;
+    loginPage.innerHTML= `<p class="formthing">A regisztrációhoz add meg az érvényes email címedet. A fiókodhoz tartozó jelszavat senkinek se add meg! Visszaélhetnek vele. <br><label>Van már fiókod?</label> <button onclick="seeLogin()" class="textbutton">Bejelentkezés</button></p>`;
+    singupPage.style.backgroundColor ="#D9EAD3";
+    loginPage.style.backgroundColor="#217346";
 }
